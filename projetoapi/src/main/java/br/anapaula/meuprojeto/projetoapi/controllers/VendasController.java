@@ -55,7 +55,7 @@ public class VendasController {
     }
 
     @GetMapping("/valorGanho")
-    public Float valorGanho() {
+    public Vendas valorGanho() {
       return repository.valorGanho();
     }
 }

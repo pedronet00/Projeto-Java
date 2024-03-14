@@ -16,7 +16,7 @@ public interface VendasRepository extends CrudRepository<Vendas, Integer> {
     Vendas selecionarTudo();
 
     @Query(value = "SELECT NULL as idvenda, NULL as data_venda, SUM(valor) as soma FROM vendas", nativeQuery = true)
-    Float valorGanho();
+    Vendas valorGanho();
 
 
 }

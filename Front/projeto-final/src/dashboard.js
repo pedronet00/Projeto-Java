@@ -18,20 +18,9 @@ function Dashboard() {
             });
     }, []);
 
+
+
     
-
-    const [valorGanho, setValorGanho] = useState(0);
-
-    useEffect(() => {
-        fetch('http://localhost:8080/vendas/valorGanho')
-            .then(response => response.json())
-            .then(data => {
-                setValorGanho(data);
-            })
-            .catch(error => {
-                console.error('Erro ao buscar o valor ganho:', error);
-            });
-    }, []);
 
     return (
         <div>
@@ -60,7 +49,7 @@ function Dashboard() {
                                 <div className="col mr-2">
                                     <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
                                         Ganhos</div>
-                                    <div className="h5 mb-0 font-weight-bold text-gray-800">R$ {valorGanho}</div>
+                                    <div className="h5 mb-0 font-weight-bold text-gray-800">R$ 200.000,00</div>
                                 </div>
                                 <div className="col-auto">
                                     <i className="fas fa-dollar-sign fa-2x text-gray-300"></i>
