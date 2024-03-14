@@ -12,6 +12,7 @@ public interface InstrumentoRepository extends CrudRepository<Instrumento, Integ
     @Query(value = "SELECT * FROM instrumento WHERE id = ?1", nativeQuery = true)
     Instrumento selecionar(int id);
 
-    
+    @Query(value= "SELECT COUNT(*) FROM instrumento", nativeQuery = true)
+    int contarInstrumentos();
     
 }

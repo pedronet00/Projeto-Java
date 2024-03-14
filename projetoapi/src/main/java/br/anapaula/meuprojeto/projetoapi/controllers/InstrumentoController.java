@@ -47,4 +47,9 @@ public class InstrumentoController {
     public Instrumento selecionar(@PathVariable int id) {
       return repository.selecionar(id);
     }
+
+    @GetMapping("/contarInstrumentos")
+    public int contarInstrumentos(){
+        return repository.contarInstrumentos();
+    }
 }

@@ -48,4 +48,9 @@ public class VendasController {
     public Vendas selecionar(@PathVariable int id) {
       return repository.selecionar(id);
     }
+
+    @GetMapping("/selecionarTudo/{id}")
+    public Vendas selecionarTudo(@PathVariable int id) {
+      return repository.selecionarTudo(id);
+    }
 }
