@@ -21,6 +21,8 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
+    private String email;
+    private String senha; 
     private Date dataNascimento;
     private int cpf;
 
