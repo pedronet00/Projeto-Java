@@ -21,10 +21,8 @@ const ListarClientes = () => {
             <thead className="bg-light">
                 <tr>
                 <th>Cliente</th>
-                <th>Title</th>
-                <th>Status</th>
-                <th>Position</th>
-                <th>Actions</th>
+                <th>Data de nascimento</th>
+                <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,15 +44,10 @@ const ListarClientes = () => {
                                 </div>
                             </td>
                             <td>
-                                <p className="fw-normal mb-1">Software engineer</p>
-                                <p className="text-muted mb-0">IT department</p>
+                                <p className="fw-normal mb-1">{item.dataNascimento}</p>
                             </td>
                             <td>
-                                <span className="badge badge-success rounded-pill d-inline">Active</span>
-                            </td>
-                            <td>Senior</td>
-                            <td>
-                                <button type="button" className="btn btn-sm btn-rounded">Editar</button>
+                                <button type="button" className="btn btn-sm btn-rounded"><i className="fa-solid fa-pen-to-square"></i>&nbsp;Editar</button>
                             </td>
                         </tr>
                     ))
