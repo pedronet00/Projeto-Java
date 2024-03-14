@@ -26,8 +26,8 @@ function NavBar(){
                                 Instrumentos
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/listarClientes">Listar Instrumentos</a></li>
-                                <li><a className="dropdown-item" href="/novoCliente">Novo Instrumento</a></li>
+                                <li><a className="dropdown-item" href="/listarInstrumentos">Listar Instrumentos</a></li>
+                                <li><a className="dropdown-item" href="/novoInstrumento">Novo Instrumento</a></li>
                             </ul>
                         </li>
 
@@ -36,8 +36,8 @@ function NavBar(){
                                 Marcas
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/listarClientes">Listar Marcas</a></li>
-                                <li><a className="dropdown-item" href="/novoCliente">Nova Marca</a></li>
+                                <li><a className="dropdown-item" href="/listarMarcas">Listar Marcas</a></li>
+                                <li><a className="dropdown-item" href="/novaMarca">Nova Marca</a></li>
                             </ul>
                         </li>
 
@@ -46,8 +46,8 @@ function NavBar(){
                                 Tipo de Instrumento
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/listarClientes">Listar Tipos</a></li>
-                                <li><a className="dropdown-item" href="/novoCliente">Novo Tipo</a></li>
+                                <li><a className="dropdown-item" href="/listarTipos">Listar Tipos</a></li>
+                                <li><a className="dropdown-item" href="/novoTipoInstrumento">Novo Tipo</a></li>
                             </ul>
                         </li>
                     </ul>
