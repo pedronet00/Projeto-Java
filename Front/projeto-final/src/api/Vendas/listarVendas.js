@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ListarVendas = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/vendas');
-                setData(response.data);
+                const response = await axios.get('http://localhost:8080/vendas/');
+                setData(response.data); // Verifique aqui
             } catch (error) {
                 console.error('Erro ao obter dados da API:', error);
             }
@@ -17,25 +17,26 @@ const ListarVendas = () => {
     }, []);
 
     return (
-        <table id="datatablesSimple" style={{width: '100%'}}>
+        <table id="datatablesSimple" style={{ width: '100%' }}>
             <thead>
                 <tr>
-                    <th>Nome</th>
+                    <th>ID Venda</th>
                     <th>Instrumento</th>
+                    <th>Marca</th>
+                    <th>Cliente</th>
                     <th>Valor</th>
-                    <th>Data</th>
-                    <th>Ação</th>
+                    <th>Data da Venda</th>
                 </tr>
             </thead>
-            
             <tbody>
-                {data && data.map(item => (
-                    <tr key={item.id}>
-                        <td>{item.idinstrumento}</td>
-                        <td>{item.instrumento}</td>
-                        <td>{item.valor}</td>
-                        <td>{item.dataVenda}</td>
-                        <td>Editar</td> {/* Você pode adicionar um link para edição aqui */}
+                {data.map(venda => (
+                    <tr key={venda.idvenda}>
+                        <td>{venda.idvenda}</td>
+                        <td>{venda.idInstrumento.nomeInstrumento}</td>
+                        <td>{venda.idInstrumento.idMarca.nomeMarca}</td>
+                        <td>{venda.idCliente.nome}</td>
+                        <td>{venda.valor}</td>
+                        <td>{venda.dataVenda}</td>
                     </tr>
                 ))}
             </tbody>

@@ -18,6 +18,21 @@ function Dashboard() {
             });
     }, []);
 
+    
+
+    const [valorGanho, setValorGanho] = useState(0);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/vendas/valorGanho')
+            .then(response => response.json())
+            .then(data => {
+                setValorGanho(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar o valor ganho:', error);
+            });
+    }, []);
+
     return (
         <div>
             <div className="row" style={{width: '80%', margin: 'auto', marginTop: '2%'}}>
@@ -45,7 +60,7 @@ function Dashboard() {
                                 <div className="col mr-2">
                                     <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
                                         Ganhos</div>
-                                    <div className="h5 mb-0 font-weight-bold text-gray-800">R$ 215.000,00</div>
+                                    <div className="h5 mb-0 font-weight-bold text-gray-800">R$ {valorGanho}</div>
                                 </div>
                                 <div className="col-auto">
                                     <i className="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -93,9 +108,9 @@ function Dashboard() {
                 </div>
             </div>
 
-            <div class="card mb-4" style={{width: '80%', margin: '2% auto'}}>
-                <div class="card-header" style={{backgroundColor: '#1b1b39', color: 'white'}}>
-                    <i class="fas fa-dollar-sign me-1"></i>
+            <div className="card mb-4" style={{width: '80%', margin: '2% auto'}}>
+                <div className="card-header" style={{backgroundColor: '#1b1b39', color: 'white'}}>
+                    <i className="fas fa-dollar-sign me-1"></i>
                     Vendas
                 </div>
                 <div className="card-body">
@@ -106,7 +121,7 @@ function Dashboard() {
             <div style={{display: 'flex', width: '80%', margin: '5% auto', justifyContent: 'space-evenly'}}>
                 <div className="card shadow mb-4" style={{width: '50%'}}>
                     <div className="card-header py-3" style={{backgroundColor: '#1b1b39', color: 'white'}}>
-                        <h6 className="m-0 font-weight-bold">Projects</h6>
+                        <h6 className="m-0 font-weight-bold">Instrumentos vendidos (m = 100)</h6>
                     </div>
                     <div className="card-body">
                         <h4 className="small font-weight-bold">Server Migration <span

@@ -49,8 +49,13 @@ public class VendasController {
       return repository.selecionar(id);
     }
 
-    @GetMapping("/selecionarTudo/{id}")
-    public Vendas selecionarTudo(@PathVariable int id) {
-      return repository.selecionarTudo(id);
+    @GetMapping("/selecionarTudo")
+    public Vendas selecionarTudo() {
+      return repository.selecionarTudo();
+    }
+
+    @GetMapping("/valorGanho")
+    public Float valorGanho() {
+      return repository.valorGanho();
     }
 }
