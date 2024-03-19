@@ -8,6 +8,8 @@ import FormularioMarca from './Marca/novaMarca.js';
 import ListarMarcas from './api/Marca/listarMarcas.js';
 import FormularioTipoInstrumento from './TipoInstrumento/novoTipoInstrumento.js';
 import Dashboard from './dashboard.js';
+import ListarInstrumentos from './api/Instrumento/listarInstrumentos.js';
+import ListarTipoInstrumento from './api/TipoInstrumento/listarTipoInstrumento.js';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route exact path='/listarMarcas' element={<ListarMarcas/>}></Route>
           <Route exact path='/novaMarca' element={<FormularioMarca/>}></Route>
           <Route exact path='/novoTipoInstrumento' element={<FormularioTipoInstrumento/>}></Route>
+          <Route exact path='/listarInstrumentos' element={<ListarInstrumentos/>}></Route>
+          <Route exact path='/listarTipos' element={<ListarTipoInstrumento/>}></Route>
         </Routes>
     </Router>
   );

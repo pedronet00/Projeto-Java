@@ -12,4 +12,6 @@ public interface ClienteRepository
         nativeQuery = true)
     Cliente selecionar(int id);
 
+@Query(value= "SELECT COUNT(*) FROM cliente", nativeQuery = true)
+    int contarClientes();
 }

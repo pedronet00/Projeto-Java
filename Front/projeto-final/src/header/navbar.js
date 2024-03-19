@@ -1,4 +1,7 @@
 import React from 'react';
+import { Dropdown, initMDB } from "mdb-ui-kit";
+
+initMDB({ Dropdown });
 
 function NavBar(){
     return(
@@ -51,10 +54,44 @@ function NavBar(){
                             </ul>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
+                    <form className="d-flex" role="search" style={{marginRight: '10%'}}>
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
                         <button className="btn btn-outline-success" type="submit">Search</button>
                     </form>
+
+                    <ul className="navbar-nav">
+                        <li className="nav-item dropdown">
+                            <a
+                            data-mdb-dropdown-init
+                            className="nav-link dropdown-toggle d-flex align-items-center"
+                            href="#"
+                            id="navbarDropdownMenuLink"
+                            role="button"
+                            aria-expanded="false"
+                            style={{color: 'white'}}
+                            >
+                            <img
+                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                                className="rounded-circle"
+                                height="22"
+                                alt="Portrait of a Woman"
+                                loading="lazy"
+                                style={{width: "50px", height: "auto"}}
+                            />
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a className="dropdown-item" href="#">My profile</a>
+                            </li>
+                            <li>
+                                <a className="dropdown-item" href="#">Settings</a>
+                            </li>
+                            <li>
+                                <a className="dropdown-item" href="#">Logout</a>
+                            </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

@@ -18,7 +18,19 @@ function Dashboard() {
             });
     }, []);
 
+    //Selecionar total de instrumentos cadastrados
+    const [totalClientes, setTotalClientes] = useState(0);
 
+    useEffect(() => {
+        fetch('http://localhost:8080/cliente/contarClientes')
+            .then(response => response.json())
+            .then(data => {
+                setTotalClientes(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar o total de clientes:', error);
+            });
+    }, []);
 
     
 
@@ -68,7 +80,7 @@ function Dashboard() {
                                     </div>
                                     <div className="row no-gutters align-items-center">
                                         <div className="col-auto">
-                                            <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">50</div>
+                                            <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">{totalClientes}</div>
                                         </div>
                                     </div>
                                 </div>

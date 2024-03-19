@@ -46,5 +46,10 @@ public class ClienteController {
     public Cliente getClienteById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
+
+    @GetMapping("/contarClientes")
+    public int contarClientes(){
+        return repository.contarClientes();
+    }
 }
 
