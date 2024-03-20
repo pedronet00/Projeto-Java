@@ -21,10 +21,8 @@ import ListarTipoInstrumento from './api/TipoInstrumento/listarTipoInstrumento.j
 
 // Função de autenticação
 const isAuthenticated = () => {
-  // Implemente a lógica de autenticação aqui
-  // Retorne true se o usuário estiver autenticado, false caso contrário
   const user = localStorage.getItem('user');
-  return !!user; // Exemplo simples: verifica se há um usuário na localStorage
+  return !!user; 
 };
 
 function App() {
