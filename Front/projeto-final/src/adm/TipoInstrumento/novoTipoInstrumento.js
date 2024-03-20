@@ -6,6 +6,11 @@ const FormularioTipoInstrumento = ({ onClienteSubmit }) => {
     const [nomeTipoInstrumento, setNome] = useState('');
     const [erros, setErros] = useState('');
 
+    const playSuccessSound = () => {
+        const audio = new Audio(`${process.env.PUBLIC_URL}/audio/success.mp3`);
+        audio.play();
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -23,6 +28,8 @@ const FormularioTipoInstrumento = ({ onClienteSubmit }) => {
         try {
             await axios.post('http://localhost:8080/tipoinstrumento', {nomeTipoInstrumento});
             setNome('');
+
+            playSuccessSound();
             Swal.fire({
                 title: 'Sucesso!',
                 text: 'Tipo de instrumento cadastrado com sucesso.',

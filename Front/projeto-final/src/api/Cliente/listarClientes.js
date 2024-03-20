@@ -7,7 +7,7 @@ const ListarClientes = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/cliente');
+                const response = await axios.get('http://localhost:8080/usuario');
                 setData(response.data);
             } catch (error) {
                 console.error('Erro ao obter dados da API:', error);
@@ -20,7 +20,7 @@ const ListarClientes = () => {
         <table className="table align-middle mb-0 bg-white">
             <thead className="bg-light">
                 <tr>
-                <th>Cliente</th>
+                <th>Usuário</th>
                 <th>Data de nascimento</th>
                 <th>Ações</th>
                 </tr>

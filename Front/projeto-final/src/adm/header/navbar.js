@@ -7,7 +7,7 @@ function NavBar(){
     return(
         <nav className="navbar navbar-expand-lg" style={{backgroundColor: '#1b1b39'}}>
             <div className="container-fluid">
-                <a className="navbar-brand" href="/" style={{color: 'white'}}><img src='../../img/logo.png' style={{width: '70px'}}/></a>
+                <a className="navbar-brand" href="/sistemaadm" style={{color: 'white'}}><img src='../../img/logo.png' style={{width: '70px'}}/></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -19,8 +19,8 @@ function NavBar(){
                                 Clientes
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/listarClientes">Listar Clientes</a></li>
-                                <li><a className="dropdown-item" href="/novoCliente">Novo Cliente</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/listarClientes">Listar Clientes</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/novoCliente">Novo Cliente</a></li>
                             </ul>
                         </li>
 
@@ -29,8 +29,8 @@ function NavBar(){
                                 Instrumentos
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/listarInstrumentos">Listar Instrumentos</a></li>
-                                <li><a className="dropdown-item" href="/novoInstrumento">Novo Instrumento</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/listarInstrumentos">Listar Instrumentos</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/novoInstrumento">Novo Instrumento</a></li>
                             </ul>
                         </li>
 
@@ -39,8 +39,8 @@ function NavBar(){
                                 Marcas
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/listarMarcas">Listar Marcas</a></li>
-                                <li><a className="dropdown-item" href="/novaMarca">Nova Marca</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/listarMarcas">Listar Marcas</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/novaMarca">Nova Marca</a></li>
                             </ul>
                         </li>
 
@@ -49,14 +49,14 @@ function NavBar(){
                                 Tipo de Instrumento
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="/listarTipos">Listar Tipos</a></li>
-                                <li><a className="dropdown-item" href="/novoTipoInstrumento">Novo Tipo</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/listarTipos">Listar Tipos</a></li>
+                                <li><a className="dropdown-item" href="/sistemaadm/novoTipoInstrumento">Novo Tipo</a></li>
                             </ul>
                         </li>
                     </ul>
                     <form className="d-flex" role="search" style={{marginRight: '10%'}}>
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        <input className="form-control me-2" type="search" placeholder="'Instrumentos', 'Vendas'..." aria-label="Search"></input>
+                        <button className="btn btn-outline-success" type="submit">Pesquisar</button>
                     </form>
 
                     <ul className="navbar-nav">

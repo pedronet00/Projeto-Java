@@ -6,6 +6,11 @@ const FormularioMarca = ({ onClienteSubmit }) => {
     const [nomeMarca, setNome] = useState('');
     const [erros, setErros] = useState('');
 
+    const playSuccessSound = () => {
+        const audio = new Audio(`${process.env.PUBLIC_URL}/audio/success.mp3`);
+        audio.play();
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -21,25 +26,25 @@ const FormularioMarca = ({ onClienteSubmit }) => {
         }
 
         try {
-            await axios.post('http://localhost:8080/marca', {nomeMarca});
+            await axios.post('http://localhost:8080/marca', { nomeMarca });
             setNome('');
             Swal.fire({
                 title: 'Sucesso!',
                 text: 'Marca cadastrada com sucesso.',
                 icon: 'success'
             });
+            playSuccessSound(); // Reproduz o som de sucesso
         } catch (error) {
             console.error('Erro ao cadastrar marca:', error);
             alert('Erro ao cadastrar marca. Por favor, tente novamente.');
         }
     };
-    
 
     return (
         <form className="row g-3 needs-validation" onSubmit={handleSubmit} noValidate>
             <div className="col-md-4">
                 <label htmlFor="validationCustom01" className="form-label">Nome da Marca</label>
-                <input type="text" className="form-control" id="validationCustom01" value={nomeMarca} onChange={(e) => setNome(e.target.value)} required />              
+                <input type="text" className="form-control" id="validationCustom01" value={nomeMarca} onChange={(e) => setNome(e.target.value)} required />
             </div>
             <div className="col-12">
                 <button className="btn btn-primary" type="submit">Salvar</button>

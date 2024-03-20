@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import ListarVendas from './api/Vendas/listarVendas';
+import ListarVendas from '../api/Vendas/listarVendas';
 
 function Dashboard() {
 

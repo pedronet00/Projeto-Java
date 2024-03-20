@@ -6,9 +6,15 @@ import Swal from 'sweetalert2';
     const [nome, setNome] = useState('');
     const [dataNascimento, setDataNascimento] = useState('');
     const [cpf, setCpf] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [emailUsuario, setEmail] = useState('');
+    const [senhaUsuario, setSenha] = useState('');
     const [erros, setErros] = useState({ nome: false });
+    const tipoUsuario = 1;
+
+    const playSuccessSound = () => {
+        const audio = new Audio(`${process.env.PUBLIC_URL}/audio/success.mp3`);
+        audio.play();
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -25,21 +31,24 @@ import Swal from 'sweetalert2';
         }
 
         try {
-            await axios.post('http://localhost:8080/cliente', {
+            await axios.post('http://localhost:8080/usuario', {
                 nome,
                 dataNascimento,
                 cpf,
-                email,
-                senha
+                emailUsuario,
+                senhaUsuario,
+                tipoUsuario
             });
             setNome('');
             setDataNascimento('');
             setCpf('');
             setEmail('');
             setSenha('');
+
+            playSuccessSound();
             Swal.fire({
                 title: 'Sucesso!',
-                text: 'Cliente cadastrado com sucesso.',
+                text: 'Funcionário cadastrado com sucesso.',
                 icon: 'success'
             });
             document.getElementById("audio").play();
@@ -52,7 +61,6 @@ import Swal from 'sweetalert2';
 
     return (
         <div>
-            <audio id="audio" src="../../public/audio/success.mp3"></audio>
             <form className="row g-3 needs-validation" onSubmit={handleSubmit} noValidate>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">Nome</label>
@@ -60,11 +68,11 @@ import Swal from 'sweetalert2';
                 </div>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">E-mail</label>
-                    <input type="email" className="form-control" id="validationCustom03" value={email} onChange={(e) => setEmail(e.target.value)} required />               
+                    <input type="email" className="form-control" id="validationCustom03" value={emailUsuario} onChange={(e) => setEmail(e.target.value)} required />               
                 </div>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">Senha</label>
-                    <input type="password" className="form-control" id="validationCustom04" value={senha} onChange={(e) => setSenha(e.target.value)} required />
+                    <input type="password" className="form-control" id="validationCustom04" value={senhaUsuario} onChange={(e) => setSenha(e.target.value)} required />
                 </div>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom02" className="form-label">Data de Nascimento</label>
