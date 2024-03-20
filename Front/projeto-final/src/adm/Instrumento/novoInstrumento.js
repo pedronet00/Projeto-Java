@@ -9,8 +9,8 @@ const FormularioNovoInstrumento = ({ onClienteSubmit }) => {
     const [erros, setErros] = useState({ nome: false });
     const [tiposInstrumento, setTiposInstrumento] = useState([]);
     const [marcas, setMarcas] = useState([]);
-    const [idTipoInstrumento, setIdTipoInstrumento] = useState('');
-    const [idMarca, setIdMarca] = useState('');
+    const [idtipoinstrumento, setIdTipoInstrumento] = useState('');
+    const [idmarca, setIdMarca] = useState('');
 
     const playSuccessSound = () => {
         const audio = new Audio(`${process.env.PUBLIC_URL}/audio/success.mp3`);
@@ -50,8 +50,8 @@ const FormularioNovoInstrumento = ({ onClienteSubmit }) => {
                 nomeInstrumento,
                 descricaoInstrumento,
                 valorInstrumento,
-                idMarca,
-                idTipoInstrumento
+                idmarca,
+                idtipoinstrumento
             });
 
             setNomeInstrumento('');
@@ -91,7 +91,7 @@ const FormularioNovoInstrumento = ({ onClienteSubmit }) => {
                 </div>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom02" className="form-label">Marca</label>
-                    <select className="form-control" id="validationCustomUsername" value={idMarca} onChange={(e) => setIdMarca(e.target.value)} required>
+                    <select className="form-control" id="validationCustomUsername" value={idmarca} onChange={(e) => setIdMarca(e.target.value)} required>
                         <option value="">Selecione uma marca</option>
                         {marcas.map((marca, index) => (
                             <option key={index} value={marca.id}>{marca.nomeMarca}</option>
@@ -100,7 +100,7 @@ const FormularioNovoInstrumento = ({ onClienteSubmit }) => {
                 </div>
                 <div className="col-md-4">
                     <label htmlFor="validationCustomUsername" className="form-label">Tipo do Instrumento</label>
-                    <select className="form-control" id="validationCustomUsername" value={idTipoInstrumento} onChange={(e) => setIdTipoInstrumento(e.target.value)} required>
+                    <select className="form-control" id="validationCustomUsername" value={idtipoinstrumento} onChange={(e) => setIdTipoInstrumento(e.target.value)} required>
                         <option value="">Selecione um tipo de instrumento</option>
                         {tiposInstrumento.map((tipo, index) => (
                             <option key={index} value={tipo.id}>{tipo.nomeTipoInstrumento}</option>

@@ -43,13 +43,14 @@ const FormularioTipoInstrumento = ({ onClienteSubmit }) => {
     
 
     return (
-        <form className="row g-3 needs-validation" onSubmit={handleSubmit} noValidate>
-            <div className="col-md-4">
+        <form className="row g-3 needs-validation" onSubmit={handleSubmit} noValidate style={{margin: "auto"}}>
+            <div className="col-md-4" style={{margin: "auto"}}>
                 <label htmlFor="validationCustom01" className="form-label">Tipo do instrumento</label>
                 <input type="text" className="form-control" id="validationCustom01" value={nomeTipoInstrumento} onChange={(e) => setNome(e.target.value)} required />              
-            </div>
-            <div className="col-12">
-                <button className="btn btn-primary" type="submit">Salvar</button>
+                
+                <div className="col-12" style={{marginTop: "2%"}}>
+                    <button className="btn btn-primary" type="submit">Salvar</button>
+                </div>
             </div>
         </form>
     );

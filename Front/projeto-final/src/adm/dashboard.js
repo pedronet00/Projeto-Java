@@ -18,7 +18,7 @@ function Dashboard() {
             });
     }, []);
 
-    //Selecionar total de instrumentos cadastrados
+    //Selecionar total de usuarios cadastrados
     const [totalClientes, setTotalClientes] = useState(0);
 
     useEffect(() => {
