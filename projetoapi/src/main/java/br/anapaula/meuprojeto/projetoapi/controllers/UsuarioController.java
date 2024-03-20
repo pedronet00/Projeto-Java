@@ -64,4 +64,9 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
         }
     }
+
+    @GetMapping("/contarUsuarios")
+    public int contarUsuarios(){
+        return repository.contarUsuarios();
+    }
 }

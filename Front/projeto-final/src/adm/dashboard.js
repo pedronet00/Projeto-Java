@@ -22,7 +22,7 @@ function Dashboard() {
     const [totalClientes, setTotalClientes] = useState(0);
 
     useEffect(() => {
-        fetch('http://localhost:8080/cliente/contarClientes')
+        fetch('http://localhost:8080/usuario/contarUsuarios')
             .then(response => response.json())
             .then(data => {
                 setTotalClientes(data);
