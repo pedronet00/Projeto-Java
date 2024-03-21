@@ -256,9 +256,6 @@ function Index(){
                                 <i className="fab fa-facebook-f"></i>
                                 </button>
                                 <button type="button" className="btn btn-primary px-3 me-1" data-mdb-ripple-init>
-                                <i className="fab fa-twitter"></i>
-                                </button>
-                                <button type="button" className="btn btn-primary px-3 me-1" data-mdb-ripple-init>
                                 <i className="fab fa-linkedin"></i>
                                 </button>
                                 <button type="button" className="btn btn-primary px-3 me-1" data-mdb-ripple-init>
@@ -292,13 +289,10 @@ function Index(){
                         </section>
 
                         <section className="text-center border-top border-bottom py-4 mb-4">
-                            <p><strong>Share with your friends:</strong></p>
+                            <p><strong>Compartilhe com seus amigos:</strong></p>
 
                             <button type="button" className="btn btn-primary me-1" data-mdb-ripple-init>
                             <i className="fab fa-facebook-f"></i>
-                            </button>
-                            <button type="button" className="btn btn-primary me-1" data-mdb-ripple-init>
-                            <i className="fab fa-twitter"></i>
                             </button>
                             <button type="button" className="btn btn-primary me-1" data-mdb-ripple-init>
                             <i className="fab fa-linkedin"></i>
@@ -311,21 +305,29 @@ function Index(){
                         <section className="border-bottom mb-4 pb-4">
                             <div className="row">
                             <div className="col-3">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(23).jpg"
+                                <img src="../../img/pedro.jpeg"
                                 className="img-fluid shadow-1-strong rounded" alt="" />
                             </div>
 
                             <div className="col-9">
                                 <p className="mb-2"><strong>Pedro Stabile Neto</strong></p>
                                 <a href="" className="text-dark"><i className="fab fa-facebook-f me-1"></i></a>
-                                <a href="" className="text-dark"><i className="fab fa-twitter me-1"></i></a>
                                 <a href="" className="text-dark"><i className="fab fa-linkedin me-1"></i></a>
+                                <a href="" className="text-dark"><i className="fab fa-instagram me-1"></i></a>
                                 <p>
                                 Trabalhou como desenvolvedor por um ano e meio. Começou a se interessar por programação no
                                 ensino médio, e desde lá tentou aprender o básico de desenvolvimento web. Hoje, está no 7º
                                 termo de Sistemas de Informação, trabalha com HTML, CSS, JS, PHP e MYSQL. Aprende Laravel e
                                 React.
-
+                                </p>
+                                <p>
+                                Enquanto Desenvolvedor Júnior, deu manutenção no sistema da empresa - um CRM
+                                imobiliário -, refatorou algumas páginas e criou novas funcionalidades. A linguagem de
+                                programação predominante na empresa é o PHP, o qual trabalhou e desenvolveu tudo
+                                anteriormente citado, além do MySQL, HTML, CSS, JS e JQuery. Além disso, documentou
+                                uma API inteira através do Swagger, utilizei o FTP Filezilla e WinSCP. Por fim, testou as
+                                funcionalidades que outros desenvolvedores construíam, com um olhar crítico e tentando
+                                encontrar possíveis brechas ou falhas na funcionalidade.
                                 </p>
                             </div>
                             </div>

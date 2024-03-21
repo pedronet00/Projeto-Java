@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [senha, setPassword] = useState('');
     const [tipoUsuario, setTipoUsuario] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,7 +37,8 @@ function Login() {
     console.log("tipo usuario: " + tipoUsuario)
 
     if (tipoUsuario === 1) {
-        return <Navigate to="/sistemaadm" />;
+        return navigate("/sistemaadm");
+        
     } else if (tipoUsuario === 2) { 
         return <Navigate to="/" />;
     } else{
